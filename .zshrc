@@ -1,118 +1,135 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export TERM="xterm-256color"
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/dianasaur/.oh-my-zsh"
+#; Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-plugins=(virtualenv)
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time virtualenv)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='blue'
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='black'
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
-# Add a space in the first prompt
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
-# Visual customisation of the second prompt line
-local user_symbol="$"
-if [[ $(print -P "%#") =~ "#" ]]; then
-    user_symbol = "#"
-fi
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+#####################################################################################
+### Powerlevel 9k Settings - https://github.com/bhilburn/powerlevel9k - NOTE: I'm using powerlevel10k
+#####################################################################################
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_beginning"
+# POWERLEVEL9K_RVM_BACKGROUND="black"
+# POWERLEVEL9K_RVM_FOREGROUND="249"
+# POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
+# POWERLEVEL9K_RVM_BACKGROUND="black"
+# POWERLEVEL9K_RVM_FOREGROUND="249"
+# POWERLEVEL9K_TIME_BACKGROUND="black"
+# POWERLEVEL9K_TIME_FOREGROUND="249"
+# POWERLEVEL9K_TIME_FORMAT="\UF43A %D{%I:%M  \UF133  %m.%d.%y}"
+# POWERLEVEL9K_STATUS_VERBOSE=false
+# POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
+# POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
+# POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
+# POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
+# POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='white'
+# POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+# POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
+# POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
+# POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
+# POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
+# POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
+# POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
+# POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='blue'
+# POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+# POWERLEVEL9K_FOLDER_ICON=''
+# POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+# POWERLEVEL9K_STATUS_VERBOSE=false
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
+# POWERLEVEL9K_CUSTOM_DOCKER_SIGNAL="zsh_docker_signal"
+# POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
+# POWERLEVEL9K_BATTERY_CHARGING='yellow'
+# POWERLEVEL9K_BATTERY_CHARGED='green'
+# POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
+# POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
+# POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+# POWERLEVEL9K_BATTERY_ICON='\uf1e6'
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir battery context vcs root_indicator dir_writable)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(node_version status background_jobs host user)
+# HIST_STAMPS="mm/dd/yyyy"
+# DISABLE_UPDATE_PROMPT=true
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Run spectrum_ls to see a list of colors zsh can easily produce and
+# which can be used in a theme
+#ZSH_SPECTRUM_TEXT=${ZSH_SPECTRUM_TEXT:-Arma virumque cano Troiae qui primus ab oris}
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="bullet-train"
+# DEFAULT_USER=`whoami`
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
+unsetopt correct_all
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git z)
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export EDITOR='nvim'
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Load private keys and secret functions
+# source ~/dotfiles/secret-keys.sh
+# source ~/dotfiles/secret-functions.sh
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Load aliases
+# source ~/dotfiles/aliases.sh
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Load in fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# Use ripgrep to get list of files over find, search hidden files, follow symlinks
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!{.git,package-lock.json}"'
+
+# Helper function to remove/putback work npmrc file
+npmrc() {
+    if [[ -f ~/.npmrc ]]; then
+        mv ~/.npmrc ~/temp.npmrc
+		echo "temp.npmrc"
+    elif [[ -f ~/temp.npmrc ]]; then
+        mv ~/temp.npmrc ~/.npmrc
+		echo ".npmrc"
+    fi
+
+}
+
+# source ~/dotfiles/secret-functions.sh
+
+#################################################
+### Colorize Man pages
+#################################################
+
+# export MANROFFOPT='-c'
+# export LESS_TERMCAP_mb=$(tput bold; tput setaf 2)
+# export LESS_TERMCAP_md=$(tput bold; tput setaf 6)
+# export LESS_TERMCAP_me=$(tput sgr0)
+# export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4)
+# export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7)
+# export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+# export LESS_TERMCAP_mr=$(tput rev)
+# export LESS_TERMCAP_mh=$(tput dim)
+# export PATH="/usr/local/sbin:$PATH"
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#################################################
+### Git Stuff
+#################################################
+export REVIEW_BASE=master
